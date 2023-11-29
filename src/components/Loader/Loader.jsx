@@ -1,7 +1,7 @@
 import { RotatingLines } from "react-loader-spinner";
 import { LoaderBox } from "./LoaderStyled";
 
-const Loader = () => {
+const Loader = () => {  
   return (
     <LoaderBox>
       <RotatingLines

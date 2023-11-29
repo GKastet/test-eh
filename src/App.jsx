@@ -1,13 +1,11 @@
-// import './App.css'
-import { Suspense } from 'react'
+import { Suspense, lazy } from 'react'
 import { Navigate, Route, Routes } from 'react-router-dom'
-import Loader from './components/Loader/Loader'
+import Loader from './components/Loader'
 import Layout from './components/Layout'
-import HomePage from './pages/HomePage/HomePage'
+
+const HomePage = lazy(() => import("./pages/HomePage/HomePage"));
 
 function App() {
-
-
   return (
     <Suspense fallback={<Loader />}>      
       <Routes>
