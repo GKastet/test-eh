@@ -1,13 +1,11 @@
 import styled from "styled-components";
 
-export const PageWrapper = styled.main`
-  /* outline: 1px solid green; */
-  /* margin-top: 85px; */
-  padding: 70px 70px;
+export const PageWrapper = styled.main`  
+  padding: 50px 50px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 40px;  
+  gap: 20px;  
 `;
 
 export const TitleBox = styled.div`

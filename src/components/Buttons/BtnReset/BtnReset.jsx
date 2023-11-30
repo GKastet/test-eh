@@ -1,12 +1,22 @@
-const BtnReset = () => {
-  const handleClickReset = () => {
-    console.log("reset");
-  };
+import PropTypes from "prop-types";
+import { cubeItems } from "../../helpers/cubeItems";
+import { BtnResetS } from "./BtnResetStyled";
+
+const BtnReset = ({ setCards }) => {
   return (
-    <button type="button" onClick={handleClickReset}>
+    <BtnResetS
+      type="button"
+      onClick={() => {
+        setCards(cubeItems);
+      }}
+    >
       Reset
-    </button>
+    </BtnResetS>
   );
+};
+
+BtnReset.propTypes = {
+  setCards: PropTypes.func,
 };
 
 export default BtnReset;

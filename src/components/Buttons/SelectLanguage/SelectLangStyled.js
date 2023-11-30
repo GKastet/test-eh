@@ -40,7 +40,7 @@ export const LanguageList = styled.ul`
     );
     border-radius: 20px;
     font-family: GilroyRegular, sans-serif;
-    color: var(--text-color-100);
+    color: var(--text-color-navy);
     z-index: 1;
   }
 `;

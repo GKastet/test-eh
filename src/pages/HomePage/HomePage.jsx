@@ -5,7 +5,6 @@ import SelectLang from "../../components/Buttons/SelectLanguage/SelectLang";
 //import DContainer from "../../components/D.Container/DContainer";
 //import DContainerUL from "../../components/D.ContainerUL/DContainerUL";
 import SectionCube from "../../components/SectionCube/SectionCube";
-import BtnReset from "../../components/Buttons/BtnReset/BtnReset";
 
 const HomePage = () => {
   
@@ -29,7 +28,7 @@ const HomePage = () => {
       {/* <DContainer/> */}
       <SectionCube/>
       {/* <DContainerUL/> */}
-      <BtnReset/>
+      
     </PageWrapper>
   );
 };

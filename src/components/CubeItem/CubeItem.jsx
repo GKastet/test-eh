@@ -2,6 +2,7 @@ import PropTypes from "prop-types";
 import { memo, useState } from "react";
 import { useDrag, useDrop } from "react-dnd";
 import { ItemTypes } from "./ItemTypes";
+import { ItemS } from "./CubeItemStyled";
 
 const CubeItem = memo(function Card({ id, moveCard, findCard, card }) {
   const { itemImg, itemImgAlt } = card;
@@ -45,20 +46,19 @@ const CubeItem = memo(function Card({ id, moveCard, findCard, card }) {
   };
 
   return (
-    <li
+    <ItemS
       ref={(node) => drag(drop(node))}
       style={{
         opacity,
         transform: `rotate(${rotation}deg)`,
-        transition: "transform 0.3s ease-in-out",
-        cursor: "pointer",
+                
       }}
       onClick={handleRotateClick}
     >
       <div>
         <img src={itemImg} alt={itemImgAlt} />
       </div>
-    </li>
+    </ItemS>
   );
 });
 

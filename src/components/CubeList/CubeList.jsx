@@ -5,11 +5,11 @@ import CubeItem from "../CubeItem/CubeItem";
 import { ItemTypes } from "../CubeItem/ItemTypes";
 import { cubeItems } from "../helpers/cubeItems";
 import { ItemsList } from "./CubeListStyled";
+import BtnReset from "../Buttons/BtnReset/BtnReset";
 
 export const CubeList = memo(function Container() {
   const [cards, setCards] = useState(cubeItems);
-  console.log('cards: ', cards);
-
+  
   const findCard = useCallback(
     (id) => {
       const card = cards.filter((c) => `${c.id}` === id)[0];
@@ -36,17 +36,20 @@ export const CubeList = memo(function Container() {
   );
   const [, drop] = useDrop(() => ({ accept: ItemTypes.CARD }));
   return (
-    <ItemsList ref={drop}>
-      {cards.map((card) => (
-        <CubeItem
-          key={card.id}
-          id={`${card.id}`}
-          moveCard={moveCard}
-          findCard={findCard}
-          card={card}
-        />
-      ))}
-    </ItemsList>
+    <>
+      <ItemsList ref={drop}>
+        {cards.map((card) => (
+          <CubeItem
+            key={card.id}
+            id={`${card.id}`}
+            moveCard={moveCard}
+            findCard={findCard}
+            card={card}
+          />
+        ))}
+      </ItemsList>
+      <BtnReset setCards={setCards}/>
+    </>
   );
 });
 
