@@ -1,7 +1,11 @@
 import { useState } from "react";
-import SectionCube from "../../components/SectionCube/SectionCube";
+//import SectionCubeOld from "../../components/SectionCubeOld/SectionCubeOld";
 import { PageWrapper, TitleBox } from "./HomePageStyled";
-import SelectLang from "../../components/SelectLanguage/SelectLang";
+import SelectLang from "../../components/Buttons/SelectLanguage/SelectLang";
+//import DContainer from "../../components/D.Container/DContainer";
+//import DContainerUL from "../../components/D.ContainerUL/DContainerUL";
+import SectionCube from "../../components/SectionCube/SectionCube";
+import BtnReset from "../../components/Buttons/BtnReset/BtnReset";
 
 const HomePage = () => {
   
@@ -21,7 +25,11 @@ const HomePage = () => {
       </TitleBox>
       {lang==="eng"&&<h3>rotate cubes by clicking</h3>}
       {lang==="cz"&&<h3>otoc kocky kliknutim</h3>}
-      <SectionCube />
+      {/* <SectionCubeOld /> */}
+      {/* <DContainer/> */}
+      <SectionCube/>
+      {/* <DContainerUL/> */}
+      <BtnReset/>
     </PageWrapper>
   );
 };

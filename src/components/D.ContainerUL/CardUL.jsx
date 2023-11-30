@@ -1,14 +1,23 @@
-import PropTypes from "prop-types";
 import { memo, useState } from "react";
 import { useDrag, useDrop } from "react-dnd";
-import { ItemTypes } from "./ItemTypes";
+import { ItemTypesUL } from "./ItemTypesUL.jsx";
 
-const CubeItem = memo(function Card({ id, moveCard, findCard, card }) {
-  const { itemImg, itemImgAlt } = card;
+const style = {
+  boxSizing: "border-box",
+  width: 150,
+  height: 150,
+  border: "1px dashed gray",
+  // padding: '0.5rem 1rem',
+  // marginBottom: '.5rem',
+  backgroundColor: "white",
+  cursor: "move",
+};
+
+export const CardUL = memo(function Card({ id, moveCard, findCard, card }) {
   const originalIndex = findCard(id).index;
   const [{ isDragging }, drag] = useDrag(
     () => ({
-      type: ItemTypes.CARD,
+      type: ItemTypesUL.CARD,
       item: { id, originalIndex },
       collect: (monitor) => ({
         isDragging: monitor.isDragging(),
@@ -25,7 +34,7 @@ const CubeItem = memo(function Card({ id, moveCard, findCard, card }) {
   );
   const [, drop] = useDrop(
     () => ({
-      accept: ItemTypes.CARD,
+      accept: ItemTypesUL.CARD,
       hover({ id: draggedId }) {
         if (draggedId !== id) {
           const { index: overIndex } = findCard(id);
@@ -47,25 +56,12 @@ const CubeItem = memo(function Card({ id, moveCard, findCard, card }) {
   return (
     <li
       ref={(node) => drag(drop(node))}
-      style={{
-        opacity,
-        transform: `rotate(${rotation}deg)`,
-        transition: "transform 0.3s ease-in-out",
-        cursor: "pointer",
-      }}
+      style={{ ...style, opacity, transform: `rotate(${rotation}deg)` }}
       onClick={handleRotateClick}
     >
       <div>
-        <img src={itemImg} alt={itemImgAlt} />
+        <img src={card.itemImg} alt={card.itemImgAlt} />
       </div>
     </li>
   );
 });
-
-CubeItem.propTypes = {
-  id: PropTypes.string.isRequired,
-  moveCard: PropTypes.func.isRequired,
-  findCard: PropTypes.func.isRequired,
-  card: PropTypes.object.isRequired,
-};
-export default CubeItem;

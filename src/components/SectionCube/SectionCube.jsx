@@ -1,15 +1,13 @@
-import { CubeList } from "./SectionCubeStyled";
-import { cubeItems } from "../helpers/cubeItems";
-import CubeItem from "../CubeItem/CubeItem";
+import { DndProvider } from "react-dnd";
+import { HTML5Backend } from "react-dnd-html5-backend";
+import CubeList from "../CubeList/CubeList";
 
 const SectionCube = () => {
   return (
     <>
-      <CubeList>
-        {cubeItems.map((item) => {
-          return <CubeItem key={item.id} item={item} />;
-        })}
-      </CubeList>
+      <DndProvider backend={HTML5Backend}>
+        <CubeList />
+      </DndProvider>
     </>
   );
 };

@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const SelectWrapper = styled.div`  
+export const SelectWrapper = styled.div`
   position: relative;
   display: flex;
   gap: 8px;
@@ -17,25 +17,26 @@ export const ButtonStyled = styled.button`
 
   &:hover {
     border: 1px solid var(--text-color-red);
-    color: var(--text-color-red);    
+    color: var(--text-color-red);
   }
 `;
 
-export const LanguageList = styled.ul`  
+export const LanguageList = styled.ul`
   display: none;
-  &.openSelect {    
+  &.openSelect {
     display: flex;
     flex-direction: column;
     gap: 6px;
-    position: absolute;    
+    position: absolute;
     right: 0;
-    top: calc(100% + 8px);    
+    top: calc(100% + 8px);
     padding: 15px 10px;
     background: white;
     background-image: linear-gradient(
       to bottom,
       var(--background-violet),
-      var(--background-main)
+      var(--background-main),
+      var(--background-violet)
     );
     border-radius: 20px;
     font-family: GilroyRegular, sans-serif;

@@ -7,13 +7,7 @@ export const PageWrapper = styled.main`
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 40px;
-
-  /* &.homePage {
-    display: flex;
-    flex-direction: column;
-    gap: 70px;
-  } */
+  gap: 40px;  
 `;
 
 export const TitleBox = styled.div`
