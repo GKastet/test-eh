@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 import { memo, useState } from "react";
 import { useDrag, useDrop } from "react-dnd";
-import { ItemTypes } from "./ItemTypes";
+import { ItemTypes } from "../../ItemTypes";
 import { ItemS } from "./CubeItemStyled";
 
 const CubeItem = memo(function Card({ id, moveCard, findCard, card }) {
@@ -41,7 +41,7 @@ const CubeItem = memo(function Card({ id, moveCard, findCard, card }) {
   const [rotation, setRotation] = useState(0);
 
   const handleRotateClick = () => {
-    const newRotation = (rotation + 90) % 360;
+    const newRotation = rotation + 90;
     setRotation(newRotation);
   };
 
@@ -51,7 +51,6 @@ const CubeItem = memo(function Card({ id, moveCard, findCard, card }) {
       style={{
         opacity,
         transform: `rotate(${rotation}deg)`,
-                
       }}
       onClick={handleRotateClick}
     >

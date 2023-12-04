@@ -1,25 +1,11 @@
 :root {
-
   --background-main: rgba(29, 213, 208, 0.22);
-  --background-violet: rgba(79, 71, 200, 0.4);
-  --background-header-white: rgba(255, 255, 255, 0.95);
-  --background-projects: #343D68;  
+  --background-violet: rgba(79, 71, 200, 0.4);  
   
   --text-color-navy: #343D68;
   --text-color-red: #E84949;
-  --text-color-white: #fff;
-  --text-color-violet:rgb(85, 26, 139);  
   
-  --fill-color-blue: #36369f;
-  --fill-color-white: #fff;
-  --fill-color-red: #E84949;
-
-  --transition-general: 300ms linear;
-
-  --page-padding-s: 0 5px;
-  --page-padding-m: 0 15px;
-
-
+  --transition-general: 300ms linear;  
 }
 body {
   margin: 0;

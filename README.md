@@ -1,8 +1,5 @@
-# React + Vite
+The project test-eh is made like a small game in which you can rotate and move small cubes to make smiles with the color you like.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+In this project is used following technologies: html, css, react, react-dnd, vite, styled-components
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Hope you will like the game!

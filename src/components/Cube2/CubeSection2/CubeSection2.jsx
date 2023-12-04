@@ -1,15 +1,15 @@
 import { DndProvider } from "react-dnd";
 import { HTML5Backend } from "react-dnd-html5-backend";
-import CubeList from "../CubeList/CubeList";
+import CubeList2 from "../CubeList2/CubeList2";
 
-const SectionCube = () => {
+const CubeSection2 = () => {
   return (
     <>
       <DndProvider backend={HTML5Backend}>
-        <CubeList />
+        <CubeList2 />
       </DndProvider>
     </>
   );
 };
 
-export default SectionCube;
+export default CubeSection2;

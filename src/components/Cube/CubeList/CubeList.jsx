@@ -1,15 +1,15 @@
-import update from "immutability-helper";
 import { memo, useCallback, useState } from "react";
 import { useDrop } from "react-dnd";
+import update from "immutability-helper";
 import CubeItem from "../CubeItem/CubeItem";
-import { ItemTypes } from "../CubeItem/ItemTypes";
-import { cubeItems } from "../helpers/cubeItems";
-import { ItemsList } from "./CubeListStyled";
-import BtnReset from "../Buttons/BtnReset/BtnReset";
+import { ItemTypes } from "../../ItemTypes";
+import { cubeItems } from "../../helpers/cubeItems";
+import BtnReset from "../../Buttons/BtnReset/BtnReset";
+import { CubeWrapper, ItemsList } from "./CubeListStyled";
 
 export const CubeList = memo(function Container() {
   const [cards, setCards] = useState(cubeItems);
-  
+
   const findCard = useCallback(
     (id) => {
       const card = cards.filter((c) => `${c.id}` === id)[0];
@@ -36,7 +36,7 @@ export const CubeList = memo(function Container() {
   );
   const [, drop] = useDrop(() => ({ accept: ItemTypes.CARD }));
   return (
-    <>
+    <CubeWrapper>
       <ItemsList ref={drop}>
         {cards.map((card) => (
           <CubeItem
@@ -48,8 +48,8 @@ export const CubeList = memo(function Container() {
           />
         ))}
       </ItemsList>
-      <BtnReset setCards={setCards}/>
-    </>
+      <BtnReset setCards={setCards} />
+    </CubeWrapper>
   );
 });
 

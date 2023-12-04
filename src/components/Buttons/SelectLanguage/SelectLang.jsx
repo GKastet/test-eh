@@ -1,18 +1,16 @@
 import PropTypes from "prop-types";
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import {
   ButtonStyled,
   LangItem,
   LanguageList,
   SelectWrapper,
 } from "./SelectLangStyled";
-import { useRef } from "react";
-import { useEffect } from "react";
 
 const SelectLang = ({ lang, changeLanguage }) => {
   const [openSelect, setOpenSelect] = useState(false);
   const backgroundRef = useRef(null);
-  const languages = ['ENG', 'CZ']
+  const languages = ["ENG", "CZ"];
 
   useEffect(() => {
     const handleDocumentClick = (event) => {
@@ -37,7 +35,7 @@ const SelectLang = ({ lang, changeLanguage }) => {
   return (
     <SelectWrapper ref={backgroundRef}>
       <ButtonStyled type="button" onClick={handleOnClickSelect}>
-        <p>{lang}</p>        
+        <p>{lang}</p>
       </ButtonStyled>
       <LanguageList className={openSelect ? "openSelect" : ""}>
         {languages.map((language) => (

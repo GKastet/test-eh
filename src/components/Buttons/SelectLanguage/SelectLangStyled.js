@@ -23,6 +23,7 @@ export const ButtonStyled = styled.button`
 
 export const LanguageList = styled.ul`
   display: none;
+  
   &.openSelect {
     display: flex;
     flex-direction: column;
