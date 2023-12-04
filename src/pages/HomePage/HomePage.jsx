@@ -27,8 +27,8 @@ const HomePage = () => {
       {lang === "eng" && <h3>rotate cubes by clicking</h3>}
       {lang === "cz" && <h3>otoc kocky kliknutim</h3>}
       <SectionsWrapper>
-        <CubeSection />
-        <CubeSection2 />
+        <CubeSection lang={lang}/>
+        <CubeSection2 lang={lang}/>
       </SectionsWrapper>
       <SocialLinks />
     </PageWrapper>

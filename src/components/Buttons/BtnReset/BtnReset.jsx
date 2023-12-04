@@ -2,7 +2,7 @@ import PropTypes from "prop-types";
 import { cubeItems } from "../../helpers/cubeItems";
 import { BtnResetS } from "./BtnResetStyled";
 
-const BtnReset = ({ setCards }) => {
+const BtnReset = ({ setCards, lang }) => {  
   return (
     <BtnResetS
       type="button"
@@ -10,13 +10,15 @@ const BtnReset = ({ setCards }) => {
         setCards(cubeItems);
       }}
     >
-      Reset
+      {lang === "eng" && "Reset"}
+      {lang === "cz" && "Vynulovať"}
     </BtnResetS>
   );
 };
 
 BtnReset.propTypes = {
   setCards: PropTypes.func,
+  lang: PropTypes.string.isRequired,
 };
 
 export default BtnReset;

@@ -1,10 +1,11 @@
+import PropTypes from "prop-types";
 import { useState } from "react";
 import { cubeItems } from "../../helpers/cubeItems";
 import CubeItem2 from "../CubeItem2/CubeUtem2";
 import BtnReset from "../../Buttons/BtnReset/BtnReset";
 import { CubeWrapper, ItemsList } from "./CubeList2Styled";
 
-const CubeList2 = () => {
+const CubeList2 = ({ lang }) => {
   const [cards, setCards] = useState(cubeItems);
 
   const moveCard = (draggedIndex, hoveredIndex) => {
@@ -28,9 +29,13 @@ const CubeList2 = () => {
           />
         ))}
       </ItemsList>
-      <BtnReset setCards={setCards} />
+      <BtnReset setCards={setCards} lang={lang} />
     </CubeWrapper>
   );
+};
+
+CubeList2.propTypes = {
+  lang: PropTypes.string,
 };
 
 export default CubeList2;

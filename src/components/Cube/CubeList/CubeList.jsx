@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import { memo, useCallback, useState } from "react";
 import { useDrop } from "react-dnd";
 import update from "immutability-helper";
@@ -7,7 +8,7 @@ import { cubeItems } from "../../helpers/cubeItems";
 import BtnReset from "../../Buttons/BtnReset/BtnReset";
 import { CubeWrapper, ItemsList } from "./CubeListStyled";
 
-export const CubeList = memo(function Container() {
+export const CubeList = memo(function Container({lang}) {
   const [cards, setCards] = useState(cubeItems);
 
   const findCard = useCallback(
@@ -34,7 +35,9 @@ export const CubeList = memo(function Container() {
     },
     [findCard, cards, setCards]
   );
+
   const [, drop] = useDrop(() => ({ accept: ItemTypes.CARD }));
+
   return (
     <CubeWrapper>
       <ItemsList ref={drop}>
@@ -48,9 +51,13 @@ export const CubeList = memo(function Container() {
           />
         ))}
       </ItemsList>
-      <BtnReset setCards={setCards} />
+      <BtnReset setCards={setCards} lang={lang}/>
     </CubeWrapper>
   );
 });
+
+CubeList.propTypes = {
+  lang: PropTypes.string,
+};
 
 export default CubeList;
